@@ -20,7 +20,6 @@
             position: relative;
         }
 
-        /* Lirik Melayang di Background */
         .floating-lyrics {
             position: absolute;
             width: 100%;
@@ -33,7 +32,7 @@
 
         .lyric-item {
             position: absolute;
-            color: rgba(255, 20, 147, 0.15); /* Pink transparan */
+            color: rgba(255, 20, 147, 0.15);
             font-weight: bold;
             font-size: 1.2rem;
             white-space: nowrap;
@@ -57,7 +56,7 @@
             border: 3px solid #ff69b4; 
             position: relative;
             z-index: 10;
-            max-height: 80vh;
+            max-height: 85vh;
             overflow-y: auto;
         }
 
@@ -80,14 +79,11 @@
         }
         button:hover { background: #ff1493; transform: scale(1.05); }
 
-        /* Grid Foto Estetik & Bebas */
         .grid-foto-estetik { 
             display: grid; 
             grid-template-columns: repeat(2, 1fr); 
             gap: 15px; 
             margin-top: 25px; 
-            position: relative;
-            z-index: 5;
         }
 
         .grid-foto-estetik img { 
@@ -96,17 +92,16 @@
             object-fit: cover; 
             border-radius: 15px; 
             border: 3px solid #ff69b4; 
-            transition: 0.3s;
             box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2);
         }
 
-        /* Atur Kemiringan & Posisi Bebas */
-        .grid-foto-estetik img:nth-child(1) { transform: rotate(-5deg); margin-left: -5px; } /* Miring kiri */
-        .grid-foto-estetik img:nth-child(2) { transform: rotate(5deg); margin-right: -5px; } /* Miring kanan */
-        .grid-foto-estetik img:nth-child(3) { transform: rotate(-3deg); margin-left: 5px; } /* Miring kiri sedikit */
-        .grid-foto-estetik img:nth-child(4) { transform: rotate(4deg); margin-right: 5px; } /* Miring kanan sedikit */
-        .grid-foto-estetik img:nth-child(5) { transform: rotate(-6deg); margin-left: -10px; } /* Miring kiri lebih */
-        .grid-foto-estetik img:nth-child(6) { transform: rotate(7deg); margin-right: -10px; } /* Miring kanan lebih */
+        /* Miring Estetik */
+        .grid-foto-estetik img:nth-child(1) { transform: rotate(-5deg); }
+        .grid-foto-estetik img:nth-child(2) { transform: rotate(5deg); }
+        .grid-foto-estetik img:nth-child(3) { transform: rotate(-3deg); }
+        .grid-foto-estetik img:nth-child(4) { transform: rotate(4deg); }
+        .grid-foto-estetik img:nth-child(5) { transform: rotate(-6deg); }
+        .grid-foto-estetik img:nth-child(6) { transform: rotate(7deg); }
 
         img.utama { 
             width: 100%; 
@@ -159,15 +154,15 @@
             
             <img src="ayas_cakep.jpg" class="utama" alt="Foto Ayas">
             
-            <p class="lirik-center animate__animated animate__fadeIn">"Firasatku ingin kau ada di sini... Memelukku menghapus sepi yang tersembunyi."</p>
+            <p class="lirik-center">"Firasatku ingin kau ada di sini... Memelukku menghapus sepi yang tersembunyi."</p>
 
             <div class="grid-foto-estetik">
-                <img src="foto1.jpg" alt="Foto 1">
-                <img src="foto2.jpg" alt="Foto 2">
-                <img src="foto3.jpg" alt="Foto 3">
-                <img src="foto4.jpg" alt="Foto 4">
-                <img src="foto5.jpg" alt="Foto 5">
-                <img src="foto6.jpg" alt="Foto 6">
+                <img src="foto1.jpeg" alt="Foto 1">
+                <img src="foto2.jpeg" alt="Foto 2">
+                <img src="foto3.jpeg" alt="Foto 3">
+                <img src="foto4.jpeg" alt="Foto 4">
+                <img src="foto5.jpeg" alt="Foto 5">
+                <img src="foto6.jpeg" alt="Foto 6">
             </div>
 
             <p style="margin-top: 25px; font-weight: bold; color: #ff1493;">Bobonya abis shubuh aja yah! 💤</p>
@@ -184,7 +179,8 @@
 
         function keHalaman(n) {
             document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
-            document.getElementById('step' + n).classList.add('active', 'animate__animated', 'animate__fadeIn');
+            var target = document.getElementById('step' + n);
+            target.classList.add('active', 'animate__animated', 'animate__fadeIn');
         }
     </script>
 </body>
